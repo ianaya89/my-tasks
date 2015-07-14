@@ -1,8 +1,10 @@
 {
-    "name": "Todo Chrome",
-    "version": "0.0.1",
+    "name": "My Tasks: TodoList for Google Chrome",
+    "short_name": "My Tasks",
+    "version": "0.0.2",
     "manifest_version": 2,
     "description": "Todo application as tab default page",
+
     "browser_action": {
         "default_title": "Todo Chrome"
     },
@@ -10,6 +12,6 @@
     "chrome_url_overrides" : {
       "newtab": "tab.html"
     },
-    
+
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
