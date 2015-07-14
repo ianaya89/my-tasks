@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TODO List</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body ng-app="todoChrome">
+
+  <div class="container" ng-controller="MainController">
+    <header class="page-header">
+      <h1>
+        My Tasks
+        <span class="glyphicon glyphicon-ok"></span>
+      </h1>
+    </header>
+    
+    <section class="row">
+      <div class="col-xs-12" ng-show="todos.length > 0">
+        <span>[{{ remaining() }} of {{ todos.length }} remaining]</span>
+      </div>
+    </section>
+
+    <section class="row">
+      <div class="col-xs-12 col-md-6" ng-show="todos.length === 0">
+        <h3>You have no pending tasks, keep it up :)</h3>
+      </div>
+      <div class="col-xs-12 col-md-6" ng-show="todos.length > 0">
+        <ul class="unstyled">
+          <li ng-repeat="todo in todos track by $index">
+            <label>
+             <span class="glyphicon glyphicon-ok" ng-show="!todo.done"></span>
+             <span class="glyphicon glyphicon-remove" ng-show="todo.done"></span>
+             <input type="checkbox" ng-model="todo.done" class="hide">
+             <span class="done-{{ todo.done }}">{{ todo.text }}</span>
+           </label>
+         </li>
+       </ul>
+       <a class="btn btn-danger" ng-click="archive()">
+        <span class="glyphicon glyphicon-remove"></span>
+        Remove Dones
+      </a>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <form ng-submit="addTodo()" class="todo-form">
+        <div class="row">
+          <div class="col-xs-12 col-md-8">
+            <input type="text" ng-model="todoText" placeholder="Add new a new task" />
+          </div>
+          <div class="col-xs-12 col-md-4">
+            <button class="btn btn-success" type="submit">
+              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+              Add New Task
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</div>
+
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
