@@ -6,7 +6,7 @@
     "description": "My Tasks will replace your default 'new tab' page with a minimalist tool that helps you keep organized your daily tasks.",
 
     "browser_action": {
-        "default_title": "Todo Chrome"
+        "default_title": "My Tasks"
     },
 
     "chrome_url_overrides" : {
