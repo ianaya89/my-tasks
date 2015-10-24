@@ -67,3 +67,8 @@ input[type="submit"] {
   margin: 10px;
   width: 120px;
 }
+
+.pointer {
+  cursor: pointer;
+}
+}
