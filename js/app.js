@@ -9,13 +9,19 @@ function TodoController ($scope) {
     JSON.parse($scope.saved) : [ {text: 'This is a sample task', done: false}];
 
   $scope.addTodo = function() {
-    $scope.todos.push({
-      text: $scope.todoText,
-      done: false
-    });
-    $scope.todoText = ''; 
-    localStorage.setItem('todos', JSON.stringify($scope.todos));
+    if ($scope.todoText) {
+      $scope.todos.push({
+        text: $scope.todoText,
+        done: false
+      });
+      $scope.todoText = ''; 
+      localStorage.setItem('todos', JSON.stringify($scope.todos));
+    }
   };
+  
+  $scope.enableAdd = function() {
+    return $scope.todoText;
+  }
 
   $scope.remaining = function() {
     var count = 0;
