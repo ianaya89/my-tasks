@@ -29,8 +29,8 @@
         <ul class="unstyled">
           <li ng-repeat="todo in todos track by $index">
             <label>
-             <span class="glyphicon glyphicon-ok" ng-show="!todo.done"></span>
-             <span class="glyphicon glyphicon-remove" ng-show="todo.done"></span>
+             <span class="glyphicon glyphicon-ok pointer" ng-show="!todo.done"></span>
+             <span class="glyphicon glyphicon-remove pointer" ng-show="todo.done"></span>
              <input type="checkbox" ng-model="todo.done" class="hide">
              <span class="done-{{ todo.done }}">{{ todo.text }}</span>
            </label>
