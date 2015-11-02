@@ -31,6 +31,11 @@ function TodoController ($scope) {
     return count;
   };
 
+  $scope.toggle = function(index) {
+    $scope.todos[index].done = !$scope.todos[index].done;
+    localStorage.setItem('todos', JSON.stringify($scope.todos));
+  };
+
   $scope.archive = function() {
     var oldTodos = $scope.todos;
     $scope.todos = [];

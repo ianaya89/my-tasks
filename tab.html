@@ -31,7 +31,7 @@
             <label>
              <span class="glyphicon glyphicon-ok pointer" ng-show="!todo.done"></span>
              <span class="glyphicon glyphicon-remove pointer" ng-show="todo.done"></span>
-             <input type="checkbox" ng-model="todo.done" class="hide">
+             <input type="checkbox" ng-click="$parent.toggle($index)" class="hide">
              <span class="done-{{ todo.done }}">{{ todo.text }}</span>
            </label>
          </li>
