@@ -21,7 +21,7 @@ function TodoController ($scope) {
   
   $scope.enableAdd = function() {
     return $scope.todoText;
-  }
+  };
 
   $scope.remaining = function() {
     var count = 0;
